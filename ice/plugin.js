@@ -91,6 +91,7 @@
                 ed.controlManager.setActive('ice_toggleshowchanges', true);
                 if(self.isTracking)
                     ed.controlManager.setActive('ice_togglechanges', true);
+                ed.execCommand('ice_disable')
             });
 
             /**
