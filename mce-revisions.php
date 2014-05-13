@@ -132,7 +132,7 @@ function vrev_save_revisions_content($data, $postarr) {
 }
 
 // load the content with revisions when post is published
-//add_filter('the_editor_content', 'vrev_load_revisions_content', 1);
+add_filter('the_editor_content', 'vrev_load_revisions_content', 1);
 function vrev_load_revisions_content($content) {
     global $post, $post_ID, $pagenow;
     static $runonce = false;
