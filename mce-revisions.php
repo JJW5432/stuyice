@@ -27,8 +27,8 @@ add_filter('mce_external_plugins', 'vrev_load_plugins');
 function vrev_load_plugins($plugins) {
     $url = plugin_dir_url(__file__);
 
-    $plugins['ice'] = $url . 'ice/plugin.min.js';
-    $plugins['icerevisions'] = $url . 'icesearchreplace/plugin.min.js';
+    $plugins['ice'] = $url . 'ice/plugin.js';
+    $plugins['icerevisions'] = $url . 'icesearchreplace/plugin.js';
 
     return $plugins;
 }
