@@ -51,9 +51,7 @@ function vrev_add_mce_buttons_2($buttons) {
     return array_merge( $buttons, array(
         '|',
         'iceaccept',
-        'icereject',
-        'seperator',
-        'styleselect'
+        'icereject'
     ));
 }
 
@@ -85,7 +83,7 @@ function vrev_mce_settings($settings) {
             'id' => $current_user->ID
         ),
         'manualInit' => true,
-        'isTracking' => !$new_post
+        'isTracking' => false
     );
 
     $ice_settings = apply_filters('mce_ice_settings', $ice_settings);
