@@ -28,7 +28,8 @@ function vrev_load_plugins($plugins) {
     $url = plugin_dir_url(__file__);
 
     $plugins['ice'] = $url . 'ice/plugin.js';
-    $plugins['icerevisions'] = $url . 'icesearchreplace/plugin.js';
+    $plugins['icerevisions'] = $url . 'icerevisions/editor_plugin.js';
+    $plugins['icesearchreplace'] = $url . 'icesearchreplace/plugin.js';
 
     return $plugins;
 }
