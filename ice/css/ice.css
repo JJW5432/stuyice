@@ -17,14 +17,11 @@
 }
 
 .ins {
-	/*background-color: #e5ffcd;*/
-    border-bottom: 3px double;
-    color: #0000FF;
+	background-color: #e5ffcd;
 }
 
 .del {
-    text-decoration: line-through;
-    color: #FF0000;
-/*color: #555;
-	background-color: #e8e8e8;*/
+	text-decoration: line-through;
+	color: #555;
+	background-color: #e8e8e8;
 }

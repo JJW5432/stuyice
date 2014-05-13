@@ -28,9 +28,7 @@ function vrev_load_plugins($plugins) {
     $url = plugin_dir_url(__file__);
 
     $plugins['ice'] = $url . 'ice/plugin.min.js';
-    $plugins['icesearchreplace'] = $url . 'icesearchreplace/plugin.min.js';
-     $plugins['icerevisions'] = $url . 'icerevisions/plugin.min.js';
-
+    $plugins['icerevisions'] = $url . 'icesearchreplace/plugin.min.js';
 
     return $plugins;
 }
@@ -40,14 +38,19 @@ add_filter('mce_buttons', 'vrev_add_mce_buttons');
 function vrev_add_mce_buttons($buttons) {
     return array_merge( $buttons, array(
         '|',
-        'iceaccept',
-        'icereject',
-        '|',
         'iceacceptall',
         'icerejectall',
         '|',
-        'ice_toggleshowchanges',
-        'ice_togglechanges'
+        'ice_toggleshowchanges'
+    ));
+}
+
+add_filter('mce_buttons_2', 'vrev_add_mce_buttons_2');
+function vrev_add_mce_buttons_2($buttons) {
+    return array_merge( $buttons, array(
+        '|',
+        'iceaccept',
+        'icereject'
     ));
 }
 
@@ -79,7 +82,7 @@ function vrev_mce_settings($settings) {
             'id' => $current_user->ID
         ),
         'manualInit' => true,
-        'isTracking' => false
+        'isTracking' => !$new_post
     );
 
     $ice_settings = apply_filters('mce_ice_settings', $ice_settings);
@@ -136,7 +139,7 @@ function vrev_load_revisions_content($content) {
         return $content;
 
     $runonce = true;
-    if ($post->post_status == 'publish' || $post->post_status == 'future' ) {
+    if ( $post->post_status == 'publish' || $post->post_status == 'future' ) {
         $meta = get_post_meta($post_ID, '_ice_revisions_content');
         $content = empty($meta) ? $content : (string) array_pop($meta);
     }
