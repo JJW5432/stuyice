@@ -83,8 +83,8 @@ function vrev_mce_settings($settings) {
             'name' => esc_attr( $current_user->display_name ),
             'id' => $current_user->ID
         ),
-        'manualInit' => true,
-        'isTracking' => false
+        //'manualInit' => true,
+        //'isTracking' => false
     );
 
     $ice_settings = apply_filters('mce_ice_settings', $ice_settings);
