@@ -51,7 +51,9 @@ function vrev_add_mce_buttons_2($buttons) {
     return array_merge( $buttons, array(
         '|',
         'iceaccept',
-        'icereject'
+        'icereject',
+        'seperator',
+        'styleselect'
     ));
 }
 
