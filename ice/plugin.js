@@ -88,9 +88,10 @@
                 document.getElementsByTagName('head')[0].appendChild(script);
 
                 // Setting the Show/Hide Changes button to active
-                //ed.controlManager.setActive('ice_toggleshowchanges', true);
-                //if(self.isTracking)
-                    //ed.controlManager.setActive('ice_togglechanges', true);
+                ed.controlManager.setActive('ice_toggleshowchanges', true);
+                if(self.isTracking)
+                    ed.controlManager.setActive('ice_togglechanges', true);
+                ed.execCommand('ice_disable');
             });
 
             /**
